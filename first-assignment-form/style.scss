@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+$primary-color: #002663;
+$black: #000;
+$gold: #dabf80;
+$gold-light: #ffe2ac;
+$gold-dark: #b78938;
+$warning: #ff0000;
+
+$border-color: #b4b4b4;
+$border-inner-shadow: #b4b4b462;
+
+$checkmark-color: #245bb4;
+$link-color: #245bb4;
+$text-color: #5a5a5a;
+$placeholder-text: #808080;
+
+$primary-background-color: #fff;
+
+@mixin description {
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+// .test {
+//   border: 1px solid black;
+// }
+p {
+  color: $text-color;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 2;
+}
+input,
+textarea {
+  outline: none;
+  &:focus {
+    border-radius: 14px;
+    border: 2px solid $black;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-container,
+.header,
+.footer {
+  margin: auto;
+  width: 100%;
+  max-width: 480px;
+}
+
+.footer,
+.header {
+  text-align: center;
+  &__social-link {
+    margin: 10px;
+  }
+}
+
+.header {
+  &__container {
+    margin-top: 32px;
+    position: relative;
+  }
+  &__line {
+    background-color: $primary-color;
+    border: none;
+    height: 2px;
+    position: absolute;
+    top: 20px;
+    left: 225px;
+    width: 28px;
+  }
+}
+
+.main-container {
+  padding: 16px;
+  &__title {
+    color: $primary-color;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.form {
+  &-group {
+    position: relative;
+    margin-bottom: 16px;
+    &__input {
+      box-shadow: inset 0 0 2px $border-inner-shadow;
+      border: 1px solid $border-color;
+      border-radius: 14px;
+      margin-top: 8px;
+      padding: 12px;
+      resize: none;
+      width: 100%;
+      &--width {
+        width: 30%;
+      }
+      &--fix-placeholder {
+        position: relative;
+        padding-left: 70px;
+      }
+    }
+    &__description {
+      @include description();
+    }
+    &__label {
+      color: $text-color;
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &__required {
+      color: $warning;
+      font-weight: 600;
+      font-size: 12px;
+      margin-left: -25px;
+      padding-top: 20px;
+    }
+    &__fix-placeholder {
+      color: $placeholder-text;
+      font-size: 14px;
+      position: absolute;
+      top: 20px;
+      left: 12px;
+    }
+    &__link {
+      color: $link-color;
+    }
+    &__checkbox-label {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      color: $text-color;
+    }
+    &__input-checkbox {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      &:checked ~ .form-group__checkmark:after {
+        display: block;
+      }
+    }
+
+    &__checkmark {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      height: 24px;
+      width: 24px;
+      background-color: #f3f2f0;
+      border-radius: 4px;
+      box-shadow: inset 0 0.5px 3px 0 #aaa;
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 8px;
+        top: 4px;
+        width: 4px;
+        height: 10px;
+        border: solid $checkmark-color;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &-submit {
+    text-align: center;
+    &__button {
+      background-color: $primary-background-color;
+      border: 1px solid $gold;
+      width: auto;
+      padding: 0 30px;
+      height: 51px;
+      line-height: 48px;
+      position: relative;
+      overflow: hidden;
+      text-transform: none;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 3px;
+      min-width: 166px;
+      color: $primary-color;
+
+      &::after {
+        background: linear-gradient(
+          to right,
+          $gold-dark 0,
+          $gold 25%,
+          $gold-light 51%,
+          $gold 76%,
+          $gold-dark 100%
+        );
+        height: 3px;
+        width: 100%;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  &__copyright,
+  &__description {
+    @include description();
+  }
+  &__link {
+    color: #4069a1;
+    text-decoration: underline;
+  }
+}

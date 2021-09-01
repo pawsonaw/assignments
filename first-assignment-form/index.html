@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Registration form Unilever">
+    <meta name="keywords" content="Registration form Unilever sign up new account">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Unilever</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="header__container">
+            <a href="https://www.gmail.com/" role="button" aria-label="email" class="header__social-link">
+                <img src="assests/icons/mail.svg" alt="email">
+            </a>
+            <hr class="header__line">
+            <a href="https://twitter.com/?lang=en" role="button" aria-label="email" class="header__social-link">
+                <img src="assests/icons/twitter.svg" alt="twitter">
+            </a>
+        </div>
+    </header>
+    <main class="main-container ">
+        <h1 class="main-container__title">Send your legislators an email now!</h1>
+        <form action="/" method="POST" class="form ">
+            <div class="form-group ">
+                <label for="full-name" class="form-group__label">Your Full Name</label>
+                <input type="text" name="fullName" id="full-name" class="form-group__input"
+                    placeholder="Enter your full name">
+                <span class="form-group__required" aria-label="required field fullname">*</span>
+            </div>
+            <div class="form-group">
+                <label for="street-address" class="form-group__label">Street Address</label>
+                <input type="text" name="streetAddress" id="street-address" class="form-group__input"
+                    placeholder="Enter your address">
+                <span class="form-group__required" aria-label="required field fullname">*</span>
+            </div>
+            <div class="form-group">
+                <label for="postal-number" class="form-group__label">Postal Number</label>
+                <input type="text" name="postalNumber" id="postal-number"
+                    class="form-group__input form-group__input--width" placeholder="Postal Number">
+                <span class="form-group__required" aria-label="required field fullname">*</span>
+                <span class="form-group__description">city and state not required</span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-group__label">E-Mail Address</label>
+                <input type="text" name="email" id="email" class="form-group__input" placeholder="Enter your address">
+                <span class="form-group__required" aria-label="required field fullname">*</span>
+            </div>
+            <div class="form-group">
+                <label for="subject" hidden>Subject</label>
+                <input type="text" name="subject" id="subject"
+                    class="form-group__input form-group__input--fix-placeholder">
+                <span class="form-group__required" aria-label="required field fullname">*</span>
+                <span class="form-group__fix-placeholder" aria-label="required field fullname">Subject:</span>
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-group__label">Enter Your Message</label>
+                <textarea name="streetAddress" id="message" rows="9" class="form-group__input"
+                    placeholder="Enter your message"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="subscribe" class="form-group__checkbox-label"> Send me emails about this campaign
+                    <input type="checkbox" name="subscribe" id="subscribe" class="form-group__input-checkbox"
+                        placeholder="Enter your full name">
+                    <span class="form-group__checkmark"></span>
+                </label>
+            </div>
+            <div class="form-group">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacus purus,
+                    dictum sit amet tempor a,
+                    dignissim sed neque. Proin sed ipsum ac arcu consequat iaculis at eget orci.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    <a href="/" class="form-group__link">Sed maximus eget</a>
+                    lorem etmattis.Nunc id ante id neque feugiat tristique nec vitae quam. Duis non
+                    mauris dui. Etiam ultricies blandit mauris.
+                </p>
+            </div>
+            <div class="form-submit">
+                <button class="form-submit__button" id="send-mail">Next: Your message</button>
+            </div>
+        </form>
+    </main>
+    <footer class="footer ">
+        <p class="footer__description">Share with others</p>
+        <a href="https://www.gmail.com/" class="footer__social-link">
+            <img src="assests/icons/facebook-vector.svg" alt="facebook">
+        </a>
+        <a href="https://twitter.com/?lang=en" class="footer__social-link">
+            <img src="assests/icons/twitter-vector.svg" alt="twitter">
+        </a>
+        <p class="footer__copyright">Ⓒ 2021. All rights reserved. Subject to
+            <a href="/" class="footer__link"> Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+
+</html>
