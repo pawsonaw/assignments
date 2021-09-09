@@ -1,0 +1,41 @@
+.footer {
+  position: relative;
+  background-color: $primary-background-color;
+  text-align: center;
+  font-size: 14px;
+  @media (min-width: 768px) {
+    text-align: start;
+    font-size: 12px;
+  }
+
+  &__brand-icon {
+    text-align: start;
+  }
+  &__social-link {
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+  &__link {
+    color: $secondary-text-color;
+    text-decoration: underline;
+  }
+
+  &__unilever-icon {
+    max-width: 50px;
+  }
+  &__copyright {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+  &__scroll-up-button {
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    @media (min-width: 768px) {
+      bottom: 0;
+    }
+  }
+}

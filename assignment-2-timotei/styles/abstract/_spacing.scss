@@ -1,0 +1,62 @@
+$spacer: 25;
+
+$size-1: 0.25;
+$size-2: 0.5;
+$size-3: 0.75;
+$size-4: 1;
+$size-5: 1.5;
+$size-6: 2;
+$size-7: 3;
+
+$sizes: (
+  "1": $size-1,
+  "2": $size-2,
+  "3": $size-3,
+  "4": $size-4,
+  "5": $size-5,
+  "6": $size-6,
+  "7": $size-7,
+);
+
+$spacings: (
+  "p": "padding",
+  "m": "margin",
+);
+
+@each $size, $times in $sizes {
+  @each $prefixclass, $property in $spacings {
+    .#{$prefixclass}-#{$size} {
+      #{$property}: $spacer * $times * 1px;
+    }
+    .#{$prefixclass}y-#{$size},
+    .#{$prefixclass}t-#{$size} {
+      #{$property}-top: $spacer * $times * 1px;
+    }
+    .#{$prefixclass}y-#{$size},
+    .#{$prefixclass}b-#{$size} {
+      #{$property}-bottom: $spacer * $times * 1px;
+    }
+    .#{$prefixclass}x-#{$size},
+    .#{$prefixclass}l-#{$size} {
+      #{$property}-left: $spacer * $times * 1px;
+    }
+    .#{$prefixclass}x-#{$size},
+    .#{$prefixclass}r-#{$size} {
+      #{$property}-right: $spacer * $times * 1px;
+    }
+  }
+}
+
+$margin-auto: (
+  "-auto": "",
+  "l-auto": "-left",
+  "r-auto": "-right",
+  "t-auto": "-top",
+  "b-auto": "-bottom",
+);
+
+@each $prefix, $side in $margin-auto {
+  .m#{$prefix} {
+    margin#{$side}: auto;
+  }
+}

@@ -1,0 +1,58 @@
+//flex classes
+.flex {
+  display: flex;
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+  &-col {
+    flex-direction: column;
+    &-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.align {
+  &-start {
+    align-items: flex-start;
+  }
+  &-center {
+    align-items: center;
+  }
+  &-end {
+    align-items: flex-end;
+  }
+}
+.justify {
+  &-start {
+    justify-content: flex-start;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.background-primary {
+  background-color: $primary-color;
+}
+.background-white {
+  background-color: $white;
+}
+.text-color-white {
+  color: $white;
+}
+.text-color-primary {
+  color: $primary-color;
+}
+
+.active {
+  display: block;
+}
+

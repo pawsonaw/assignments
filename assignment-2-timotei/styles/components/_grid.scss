@@ -1,0 +1,77 @@
+// breakpoints
+$bp-sm: 576;
+$bp-md: 768;
+$bp-lg: 992;
+$bp-xl: 1170;
+
+$breakpoints: (
+  "": 0,
+  "-sm": $bp-sm,
+  "-md": $bp-md,
+  "-lg": $bp-lg,
+  "-xl": $bp-xl,
+);
+
+// layout vars
+$grid-columns: 12;
+$gutter-size: 15px;
+
+// create media queried properties
+@mixin create-mq($bp, $min-max) {
+  @if ($bp == 0) {
+    @content;
+  } @else {
+    @media screen and (#{$min-max}-width: $bp * 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-mq-between($min, $max) {
+  @media screen and (min-width: $min * 1px) and (max-width: $max * 1px) {
+    @content;
+  }
+}
+
+// used to create all column classes for the layout
+@mixin create-cols($mq, $cols, $bp) {
+  @include create-mq($bp, "min") {
+    .col#{$mq}-offset-0 {
+      margin-left: 0;
+    }
+    @for $n from 1 through $cols {
+      .col#{$mq}-#{$n} {
+        flex-basis: (100 / ($cols / $n)) * 1%;
+        padding: 0 $gutter-size;
+      }
+      .col#{$mq}-offset-#{$n} {
+        margin-left: (100 / ($cols / $n)) * 1%;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: $bp-xl * 1px;
+  margin: 0 auto;
+  padding: 0 25px;
+  &-fluid {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+.no-gutter {
+  padding: 0 25px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-1 * $gutter-size);
+}
+
+@each $mod, $breakpoint in $breakpoints {
+  @include create-cols($mod, $grid-columns, $breakpoint);
+}
+.col-auto {
+  margin-left: auto;
+}
